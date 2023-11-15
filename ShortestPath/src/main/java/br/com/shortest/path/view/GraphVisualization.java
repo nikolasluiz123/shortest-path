@@ -1,4 +1,4 @@
-package br.com.shortest.path;
+package br.com.shortest.path.view;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -6,7 +6,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
-public class GraphVizualization extends Application {
+public class GraphVisualization extends Application {
 
 	@Override
 	public void start(Stage stage) {

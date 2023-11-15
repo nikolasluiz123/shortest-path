@@ -3,10 +3,12 @@ package br.com.shortest.path.controller;
 import java.io.File;
 
 import br.com.shortest.path.TextFileChooser;
+import br.com.shortest.path.enums.EnumVisualizationType;
 import br.com.shortest.path.graph.Edge;
 import br.com.shortest.path.graph.GraphDataTransform;
 import br.com.shortest.path.graph.GraphGenerator.GraphGeneratorConfigurator;
 import br.com.shortest.path.graph.Vertex;
+import br.com.shortest.path.view.TableValuesVisualization;
 import edu.uci.ics.jung.graph.Graph;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
@@ -44,7 +46,7 @@ public class MainController {
 	private void drawGraph() {
 		try {
 			GraphDataTransform graphBuilder = new GraphDataTransform(this.file.getAbsolutePath());
-			Graph<Vertex, Edge> graph = graphBuilder.transform();
+			Graph<Vertex, Edge> graph = graphBuilder.transformDataInGraph();
 
 			GraphGeneratorConfigurator configurator = new GraphGeneratorConfigurator();
 			SwingNode swingNode = configurator.setDimension(700, 700)
@@ -61,12 +63,14 @@ public class MainController {
 	
 	@FXML
 	private void onMenuItemVisualizarPilhaClick(ActionEvent event) {
-		
+		TableValuesVisualization tableVisualization = new TableValuesVisualization(EnumVisualizationType.STACK, this.file);
+		tableVisualization.start(new Stage());
 	}
 	
 	@FXML
 	private void onMenuItemVisualizarFilaClick(ActionEvent event) {
-		
+		TableValuesVisualization tableVisualization = new TableValuesVisualization(EnumVisualizationType.QUEUE, this.file);
+		tableVisualization.start(new Stage());
 	}
 	
 	@FXML

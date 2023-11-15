@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+
+<VBox fx:controller="br.com.shortest.path.controller.TableValuesController" prefHeight="600.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane>
+         <children>
+            <TableView fx:id="tableViewValues" prefHeight="600.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="columnVerticeInicial" maxWidth="200.0" minWidth="100.0" prefWidth="200.0" text="Vértice Inicial" />
+                <TableColumn fx:id="columnVerticeFinal" maxWidth="200.0" minWidth="100.0" prefWidth="200.0" text="Vértice Final" />
+                <TableColumn fx:id="columnDistancia" maxWidth="200.0" minWidth="100.0" prefWidth="200.0" text="Distância" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>
