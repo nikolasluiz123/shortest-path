@@ -6,8 +6,21 @@ import java.util.List;
 import java.util.Random;
 import java.util.Set;
 
+/**
+ * Classe utilitária com métodos que trabalham com números.
+ * 
+ * @author Nikolas Luiz Schmitt
+ */
 public class NumberUtils {
 
+	/**
+	 * Método que gera uma lista de números aleatórios diferentes.
+	 * 
+	 * @param count Quantidade de números aleatórios únicos que deseja gerar
+	 * 
+	 * @author Nikolas Luiz Schmitt
+	 *
+	 */
 	public static List<Integer> generateRandomNumbers(Integer count) {
         Set<Integer> numbers = new HashSet<>();
         Random random = new Random();

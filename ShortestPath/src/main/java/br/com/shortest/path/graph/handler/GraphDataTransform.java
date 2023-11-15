@@ -1,4 +1,4 @@
-package br.com.shortest.path.graph;
+package br.com.shortest.path.graph.handler;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -6,9 +6,17 @@ import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
+import br.com.shortest.path.graph.structure.Edge;
+import br.com.shortest.path.graph.structure.Vertex;
 import br.com.shortest.path.reader.FileBufferedReader;
 import edu.uci.ics.jung.graph.SparseMultigraph;
 
+/**
+ * Classe responsável por transformar os dados do arquivo
+ * em estruturas específicas para realizar as operações.
+ * 
+ * @author Nikolas Luiz Schmitt
+ */
 public class GraphDataTransform {
 
 	private FileBufferedReader reader;
@@ -17,6 +25,13 @@ public class GraphDataTransform {
 		this.reader = new FileBufferedReader(fileName);
 	}
 
+	/**
+	 * Método que transforma os dados do arquivo em um grafo que
+	 * pode ser exibido.
+	 * 
+	 * @author Nikolas Luiz Schmitt
+	 *
+	 */
 	public SparseMultigraph<Vertex, Edge> transformDataInGraph() throws Exception {
 		List<String> lines = this.reader.readFile();
 
@@ -48,6 +63,13 @@ public class GraphDataTransform {
 		return viewGraph;
 	}
 	
+	/**
+	 * Método que transforma transforma os dados do arquivo
+	 * em uma pilha de {@link Edge}. 
+	 * 
+	 * @author Nikolas Luiz Schmitt
+	 *
+	 */
 	public Stack<Edge> transformDataInStackedEdges() throws Exception {
 		List<String> lines = this.reader.readFile();
 		Stack<Edge> edges = new Stack<>();
@@ -62,6 +84,13 @@ public class GraphDataTransform {
 		return edges;
 	}
 	
+	/**
+	 * Método que transforma os dados do arquivo em uma 
+	 * fila de {@link Edge}.
+	 * 
+	 * @author Nikolas Luiz Schmitt
+	 *
+	 */
 	public Queue<Edge> transformDataInQueuedEdges() throws Exception {
 		List<String> lines = this.reader.readFile();
 		Queue<Edge> edges = new LinkedList<>();
@@ -76,6 +105,13 @@ public class GraphDataTransform {
 		return edges;
 	}
 	
+	/**
+	 * Método que transforma os dados do arquivo em uma 
+	 * lista de {@link Vertex}.
+	 * 
+	 * @author Nikolas Luiz Schmitt
+	 *
+	 */
 	public List<Vertex> transformDataInVertices() throws Exception {
 		List<String> lines = this.reader.readFile();
 		List<Vertex> vertices = new ArrayList<>();

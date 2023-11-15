@@ -1,5 +1,6 @@
-package br.com.shortest.path.graph;
+package br.com.shortest.path.graph.structure;
 
+import java.util.Objects;
 import java.util.StringJoiner;
 
 public class Edge {
@@ -37,24 +38,36 @@ public class Edge {
 	public void setWeight(Integer weight) {
 		this.weight = weight;
 	}
-	
+
 	@Override
 	public String toString() {
 		StringJoiner joiner = new StringJoiner("\r\n");
-		
+
 		joiner.add("Start: ".concat(this.start.getValue().toString()));
 		joiner.add("End: ".concat(this.end.getValue().toString()));
 		joiner.add("Weight: ".concat(this.weight.toString()));
-		
-		return joiner.toString();		
+
+		return joiner.toString();
 	}
-	
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(end, start);
+	}
+
 	@Override
 	public boolean equals(Object obj) {
-		Edge edge = (Edge) obj;
+		if (this == obj)
+			return true;
 		
-		return this.getStart().getValue().equals(edge.getStart().getValue()) &&
-				this.getEnd().getValue().equals(edge.getEnd().getValue());
+		if (obj == null)
+			return false;
+		
+		if (getClass() != obj.getClass())
+			return false;
+		
+		Edge other = (Edge) obj;
+		return Objects.equals(end, other.end) && Objects.equals(start, other.start);
 	}
 
 }

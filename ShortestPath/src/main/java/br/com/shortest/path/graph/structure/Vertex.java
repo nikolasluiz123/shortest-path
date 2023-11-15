@@ -1,4 +1,4 @@
-package br.com.shortest.path.graph;
+package br.com.shortest.path.graph.structure;
 
 import java.util.Objects;
 

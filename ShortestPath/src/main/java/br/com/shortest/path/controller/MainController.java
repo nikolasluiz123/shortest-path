@@ -2,14 +2,14 @@ package br.com.shortest.path.controller;
 
 import java.io.File;
 
-import br.com.shortest.path.TextFileChooser;
 import br.com.shortest.path.enums.EnumVisualizationType;
-import br.com.shortest.path.graph.Edge;
-import br.com.shortest.path.graph.GraphDataTransform;
-import br.com.shortest.path.graph.GraphGenerator.GraphGeneratorConfigurator;
-import br.com.shortest.path.graph.Vertex;
+import br.com.shortest.path.graph.handler.GraphDataTransform;
+import br.com.shortest.path.graph.handler.GraphGenerator.GraphGeneratorConfigurator;
+import br.com.shortest.path.graph.structure.Edge;
+import br.com.shortest.path.graph.structure.Vertex;
 import br.com.shortest.path.view.CalculateSmallerPathVisualization;
 import br.com.shortest.path.view.TableValuesVisualization;
+import br.com.shortest.path.view.TextFileChooser;
 import edu.uci.ics.jung.graph.SparseMultigraph;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
@@ -18,6 +18,11 @@ import javafx.scene.control.MenuItem;
 import javafx.scene.layout.StackPane;
 import javafx.stage.Stage;
 
+/**
+ * Controller responsável pela tela inicial
+ * 
+ * @author Nikolas Luiz Schmitt
+ */
 public class MainController {
 
 	@FXML

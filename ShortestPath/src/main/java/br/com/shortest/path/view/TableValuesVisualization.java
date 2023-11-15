@@ -10,6 +10,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Tela que exibe os dados do arquivo tabulados.
+ * 
+ * @author Nikolas Luiz Schmitt
+ */
 public class TableValuesVisualization extends Application {
 
 	private EnumVisualizationType visualizationType;

@@ -1,4 +1,4 @@
-package br.com.shortest.path.graph;
+package br.com.shortest.path.graph.handler;
 
 import java.awt.BasicStroke;
 import java.awt.Color;
@@ -7,6 +7,8 @@ import java.awt.geom.Point2D;
 import java.util.ArrayList;
 import java.util.List;
 
+import br.com.shortest.path.graph.structure.Edge;
+import br.com.shortest.path.graph.structure.Vertex;
 import br.com.shortest.path.utils.NumberUtils;
 import edu.uci.ics.jung.algorithms.layout.StaticLayout;
 import edu.uci.ics.jung.graph.SparseMultigraph;
@@ -14,6 +16,11 @@ import edu.uci.ics.jung.visualization.BasicVisualizationServer;
 import edu.uci.ics.jung.visualization.decorators.ToStringLabeller;
 import javafx.embed.swing.SwingNode;
 
+/**
+ * Classe responsável por desenhar o grafo.
+ * 
+ * @author Nikolas Luiz Schmitt
+ */
 public class GraphGenerator {
 
 	private SparseMultigraph<Vertex, Edge> graph;
@@ -26,6 +33,13 @@ public class GraphGenerator {
 		this.edgeStroke = edgeStroke;
 	}
 
+	/**
+	 * Método que gera o grafo e retorna um {@link SwingNode}
+	 * contendo ele, dessa forma é possível adicionar como
+	 * filho de algum componente de layout.
+	 * 
+	 * @author Nikolas Luiz Schmitt
+	 */
 	public SwingNode generateGraph() {
 		StaticLayout<Vertex, Edge> layout = new StaticLayout<>(graph);
 
@@ -51,6 +65,12 @@ public class GraphGenerator {
 		return swingNode;
 	}
 	
+	/**
+	 * Classe utilizada para definir as configurações
+	 * do gerador de grafos.
+	 * 
+	 * @author Nikolas Luiz Schmitt
+	 */
 	public static class GraphGeneratorConfigurator {
 		
 		private Dimension dimension;

@@ -9,6 +9,11 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Tela do cálculo de menor caminho entre dois vértices do grafo
+ * 
+ * @author Nikolas Luiz Schmitt
+ */
 public class CalculateSmallerPathVisualization extends Application {
 
 	private File file;

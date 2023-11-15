@@ -5,6 +5,11 @@ import java.io.FileReader;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Classe para ler o arquivo txt.
+ * 
+ * @author Nikolas Luiz Schmitt
+ */
 public class FileBufferedReader {
 
 	private String fileName;
@@ -13,6 +18,12 @@ public class FileBufferedReader {
 		this.fileName = fileName;
 	}
 
+	/**
+	 * Lê o arquivo e retorna a lista de linhas.
+	 * 
+	 * @author Nikolas Luiz Schmitt
+	 *
+	 */
 	public List<String> readFile() throws Exception {
 		List<String> numbers = new ArrayList<>();
 

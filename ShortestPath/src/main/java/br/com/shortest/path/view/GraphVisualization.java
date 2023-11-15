@@ -6,6 +6,12 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
 
+/**
+ * Tela principal onde pode-se ver o grafo gerado e realizar
+ * todas as operações pelo menu.
+ * 
+ * @author Nikolas Luiz Schmitt
+ */
 public class GraphVisualization extends Application {
 
 	@Override
