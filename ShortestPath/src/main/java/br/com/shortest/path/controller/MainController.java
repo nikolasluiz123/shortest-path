@@ -8,8 +8,9 @@ import br.com.shortest.path.graph.Edge;
 import br.com.shortest.path.graph.GraphDataTransform;
 import br.com.shortest.path.graph.GraphGenerator.GraphGeneratorConfigurator;
 import br.com.shortest.path.graph.Vertex;
+import br.com.shortest.path.view.CalculateSmallerPathVisualization;
 import br.com.shortest.path.view.TableValuesVisualization;
-import edu.uci.ics.jung.graph.Graph;
+import edu.uci.ics.jung.graph.SparseMultigraph;
 import javafx.embed.swing.SwingNode;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -46,7 +47,7 @@ public class MainController {
 	private void drawGraph() {
 		try {
 			GraphDataTransform graphBuilder = new GraphDataTransform(this.file.getAbsolutePath());
-			Graph<Vertex, Edge> graph = graphBuilder.transformDataInGraph();
+			SparseMultigraph<Vertex, Edge> graph = graphBuilder.transformDataInGraph();
 
 			GraphGeneratorConfigurator configurator = new GraphGeneratorConfigurator();
 			SwingNode swingNode = configurator.setDimension(700, 700)
@@ -75,7 +76,8 @@ public class MainController {
 	
 	@FXML
 	private void onMenuItemCalcularMenorCaminhoClick(ActionEvent event) {
-		
+		CalculateSmallerPathVisualization calculateVisualization = new 	CalculateSmallerPathVisualization(this.file);
+		calculateVisualization.start(new Stage());
 	}
 
 	private Stage getStageFromMenuItemActionEvent(ActionEvent event) {

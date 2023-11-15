@@ -17,7 +17,7 @@ public class GraphVisualization extends Application {
 			Scene scene = new Scene(root);
 
 			stage.setResizable(false);
-			stage.setTitle("Descubra o Menor Caminho");
+			stage.setTitle("Renderize um Grafo a Partir de um TXT");
 			stage.setScene(scene);
 			stage.show();
 		} catch (Exception e) {

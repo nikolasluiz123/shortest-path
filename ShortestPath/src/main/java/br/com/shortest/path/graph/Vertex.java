@@ -1,5 +1,7 @@
 package br.com.shortest.path.graph;
 
+import java.util.Objects;
+
 public class Vertex {
 
 	private String value;
@@ -22,7 +24,22 @@ public class Vertex {
 	}
 	
 	@Override
+	public int hashCode() {
+		return Objects.hash(value);
+	}
+
+	@Override
 	public boolean equals(Object obj) {
-		return this.value.equals(((Vertex) obj).getValue());
+		if (this == obj)
+			return true;
+		
+		if (obj == null)
+			return false;
+		
+		if (getClass() != obj.getClass())
+			return false;
+		
+		Vertex other = (Vertex) obj;
+		return Objects.equals(value, other.value);
 	}
 }

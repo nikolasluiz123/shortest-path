@@ -9,18 +9,18 @@ import java.util.List;
 
 import br.com.shortest.path.utils.NumberUtils;
 import edu.uci.ics.jung.algorithms.layout.StaticLayout;
-import edu.uci.ics.jung.graph.Graph;
+import edu.uci.ics.jung.graph.SparseMultigraph;
 import edu.uci.ics.jung.visualization.BasicVisualizationServer;
 import edu.uci.ics.jung.visualization.decorators.ToStringLabeller;
 import javafx.embed.swing.SwingNode;
 
 public class GraphGenerator {
 
-	private Graph<Vertex, Edge> graph;
+	private SparseMultigraph<Vertex, Edge> graph;
 	private Dimension dimension;
 	private BasicStroke edgeStroke;
 	
-	private GraphGenerator(Graph<Vertex, Edge> graph, Dimension dimension, BasicStroke edgeStroke) {
+	private GraphGenerator(SparseMultigraph<Vertex, Edge> graph, Dimension dimension, BasicStroke edgeStroke) {
 		this.graph = graph;
 		this.dimension = dimension;
 		this.edgeStroke = edgeStroke;
@@ -66,7 +66,7 @@ public class GraphGenerator {
 			return this;
 		}
 		
-		public SwingNode generateWithConfigs(Graph<Vertex, Edge> graph) {
+		public SwingNode generateWithConfigs(SparseMultigraph<Vertex, Edge> graph) {
 			GraphGenerator generator = new GraphGenerator(graph, this.dimension, this.edgeStroke);
 			return generator.generateGraph();
 		}

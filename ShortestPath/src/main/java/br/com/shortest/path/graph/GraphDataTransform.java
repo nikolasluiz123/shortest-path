@@ -1,13 +1,13 @@
 package br.com.shortest.path.graph;
 
+import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 import java.util.Stack;
 
 import br.com.shortest.path.reader.FileBufferedReader;
-import edu.uci.ics.jung.graph.Graph;
-import edu.uci.ics.jung.graph.SparseGraph;
+import edu.uci.ics.jung.graph.SparseMultigraph;
 
 public class GraphDataTransform {
 
@@ -17,10 +17,10 @@ public class GraphDataTransform {
 		this.reader = new FileBufferedReader(fileName);
 	}
 
-	public Graph<Vertex, Edge> transformDataInGraph() throws Exception {
+	public SparseMultigraph<Vertex, Edge> transformDataInGraph() throws Exception {
 		List<String> lines = this.reader.readFile();
 
-		Graph<Vertex, Edge> viewGraph = new SparseGraph<>();
+		SparseMultigraph<Vertex, Edge> viewGraph = new SparseMultigraph<>();
 
 		for (String line : lines) {
 			String[] split = line.split(";");
@@ -74,5 +74,24 @@ public class GraphDataTransform {
 		}
 		
 		return edges;
+	}
+	
+	public List<Vertex> transformDataInVertices() throws Exception {
+		List<String> lines = this.reader.readFile();
+		List<Vertex> vertices = new ArrayList<>();
+		
+		for (String line : lines) {
+			String[] split = line.split(";");
+
+			if (!vertices.stream().anyMatch(v -> v.getValue().equals(split[0]))) {
+				vertices.add(new Vertex(split[0]));
+			}
+			
+			if (!vertices.stream().anyMatch(v -> v.getValue().equals(split[1]))) {
+				vertices.add(new Vertex(split[1]));
+			}
+		}
+		
+		return vertices;
 	}
 }
