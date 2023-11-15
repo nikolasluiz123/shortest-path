@@ -9,16 +9,17 @@ import javafx.stage.Stage;
 public class GraphVizualization extends Application {
 
 	@Override
-	public void start(Stage primaryStage) {
+	public void start(Stage stage) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource("/main-screen.fxml"));
 			Parent root = loader.load();
 
 			Scene scene = new Scene(root);
 
-			primaryStage.setTitle("Descubra o Menor Caminho");
-			primaryStage.setScene(scene);
-			primaryStage.show();
+			stage.setResizable(false);
+			stage.setTitle("Descubra o Menor Caminho");
+			stage.setScene(scene);
+			stage.show();
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

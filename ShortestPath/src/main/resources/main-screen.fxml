@@ -21,11 +21,43 @@
 						</MenuItem>
 					</items>
 				</Menu>
+            <Menu mnemonicParsing="false" text="Grafo">
+               <items>
+                  <MenuItem id="menuItemRedesenhar" mnemonicParsing="false" onAction="#onMenuItemRedesenharClick" text="Redesenhar">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="R" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Dados">
+               <items>
+                  <MenuItem id="menuItemVisualizarPilha" mnemonicParsing="false" onAction="#onMenuItemVisualizarPilhaClick" text="Visualizar em Pilha">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="P" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+                  <MenuItem id="menuItemVisualizarFila" mnemonicParsing="false" onAction="#onMenuItemVisualizarFilaClick" text="Vizualizar em Fila">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="F" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+               </items>
+            </Menu>
+            <Menu mnemonicParsing="false" text="Calculo">
+               <items>
+                  <MenuItem id="menuItemCalcularMenorCaminhoPilha" mnemonicParsing="false" onAction="#onMenuItemCalcularMenorCaminhoClick" text="Menor Caminho">
+                     <accelerator>
+                        <KeyCodeCombination alt="UP" code="C" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                     </accelerator>
+                  </MenuItem>
+               </items>
+            </Menu>
 			</menus>
 		</MenuBar>
       <AnchorPane minHeight="800.0" minWidth="800.0">
          <children>
-            <StackPane fx:id="graphContainer" minHeight="800.0" minWidth="800.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
+            <StackPane fx:id="graphContainer" prefHeight="700.0" prefWidth="700.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0" />
          </children>
       </AnchorPane>
 	</children>

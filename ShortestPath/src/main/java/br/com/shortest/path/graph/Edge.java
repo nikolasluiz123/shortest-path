@@ -48,5 +48,13 @@ public class Edge {
 		
 		return joiner.toString();		
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		Edge edge = (Edge) obj;
+		
+		return this.getStart().getValue().equals(edge.getStart().getValue()) &&
+				this.getEnd().getValue().equals(edge.getEnd().getValue());
+	}
 
 }

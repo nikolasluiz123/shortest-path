@@ -20,4 +20,9 @@ public class Vertex {
 	public String toString() {
 		return this.value;
 	}
+	
+	@Override
+	public boolean equals(Object obj) {
+		return this.value.equals(((Vertex) obj).getValue());
+	}
 }
