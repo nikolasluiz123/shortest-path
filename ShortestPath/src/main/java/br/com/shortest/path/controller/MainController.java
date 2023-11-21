@@ -7,6 +7,7 @@ import br.com.shortest.path.graph.handler.GraphDataTransform;
 import br.com.shortest.path.graph.handler.GraphGenerator.GraphGeneratorConfigurator;
 import br.com.shortest.path.graph.structure.Edge;
 import br.com.shortest.path.graph.structure.Vertex;
+import br.com.shortest.path.utils.AlertUtils;
 import br.com.shortest.path.view.CalculateSmallerPathVisualization;
 import br.com.shortest.path.view.TableValuesVisualization;
 import br.com.shortest.path.view.TextFileChooser;
@@ -44,7 +45,9 @@ public class MainController {
 
 	@FXML
 	private void onMenuItemRedesenharClick(ActionEvent event) {
-		if (this.file != null) {
+		if(file == null) {
+			AlertUtils.showErrorDialog("Utilize o atalho Control + I para importar um arquivo txt com as distâncias, dessa forma o grafo será gerado você poderá redesenha-lo.");
+		} else {
 			drawGraph();
 		}
 	}
