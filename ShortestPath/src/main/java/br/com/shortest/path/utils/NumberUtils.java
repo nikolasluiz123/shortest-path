@@ -21,12 +21,12 @@ public class NumberUtils {
 	 * @author Nikolas Luiz Schmitt
 	 *
 	 */
-	public static List<Integer> generateRandomNumbers(Integer count) {
+	public static List<Integer> generateRandomNumbers(Integer count, Integer max) {
         Set<Integer> numbers = new HashSet<>();
         Random random = new Random();
 
         while (numbers.size() < count) {
-            int numeroAleatorio = random.nextInt(750);
+            int numeroAleatorio = random.nextInt(max);
             numbers.add(numeroAleatorio);
         }
 

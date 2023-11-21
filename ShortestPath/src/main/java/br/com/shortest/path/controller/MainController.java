@@ -55,7 +55,7 @@ public class MainController {
 			SparseMultigraph<Vertex, Edge> graph = graphBuilder.transformDataInGraph();
 
 			GraphGeneratorConfigurator configurator = new GraphGeneratorConfigurator();
-			SwingNode swingNode = configurator.setDimension(700, 700)
+			SwingNode swingNode = configurator.setDimension((int) graphContainer.getWidth(), (int) graphContainer.getHeight())
 											  .setEdgeStroke(2.0f)
 											  .generateWithConfigs(graph);
 			

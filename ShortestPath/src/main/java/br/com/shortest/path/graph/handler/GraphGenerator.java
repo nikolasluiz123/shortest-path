@@ -43,11 +43,12 @@ public class GraphGenerator {
 	public SwingNode generateGraph() {
 		StaticLayout<Vertex, Edge> layout = new StaticLayout<>(graph);
 
-		List<Integer> randomNumbers = NumberUtils.generateRandomNumbers(graph.getVertices().size() * 2);
+		List<Integer> heightRandomNumbers = NumberUtils.generateRandomNumbers(graph.getVertices().size(), (int) this.dimension.getHeight() - 50);
+		List<Integer> widthRandomNumbers = NumberUtils.generateRandomNumbers(graph.getVertices().size(), (int) this.dimension.getWidth() - 50);
 		
 		List<Vertex> vertices = new ArrayList<>(graph.getVertices());
 		for (int i = 0; i < vertices.size(); i++) {
-			layout.setLocation(vertices.get(i), new Point2D.Double(randomNumbers.get(i), randomNumbers.get(i + 1)));
+			layout.setLocation(vertices.get(i), new Point2D.Double(widthRandomNumbers.get(i), heightRandomNumbers.get(i)));
 		}
 
 		BasicVisualizationServer<Vertex, Edge> vv = new BasicVisualizationServer<>(layout);

@@ -22,6 +22,7 @@ public class GraphVisualization extends Application {
 
 			Scene scene = new Scene(root);
 
+			stage.setMaximized(true);
 			stage.setResizable(false);
 			stage.setTitle("Renderize um Grafo a Partir de um TXT");
 			stage.setScene(scene);

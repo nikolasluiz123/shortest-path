@@ -1,0 +1,50 @@
+Belo Horizonte;Porto Alegre;200
+Porto Alegre;Salvador;300
+Salvador;Recife;150
+Recife;Manaus;500
+Manaus;Goiânia;1000
+Goiânia;Fortaleza;250
+Fortaleza;Natal;50
+Natal;Aracaju;700
+Aracaju;Vitória;400
+Vitória;Belo Horizonte;800
+Belo Horizonte;Manaus;350
+Porto Alegre;Recife;600
+Salvador;Goiânia;200
+Recife;Fortaleza;450
+Manaus;Natal;150
+Goiânia;Aracaju;550
+Fortaleza;Vitória;300
+Natal;Belo Horizonte;900
+Aracaju;Porto Alegre;100
+Vitória;Salvador;700
+Belo Horizonte;Fortaleza;250
+Porto Alegre;Natal;400
+Salvador;Aracaju;800
+Recife;Vitória;150
+Manaus;Goiânia;600
+Goiânia;Belo Horizonte;350
+Fortaleza;Porto Alegre;500
+Natal;Salvador;200
+Aracaju;Recife;900
+Vitória;Manaus;1000
+Belo Horizonte;Goiânia;150
+Porto Alegre;Aracaju;300
+Salvador;Vitória;450
+Recife;Belo Horizonte;50
+Manaus;Fortaleza;700
+Goiânia;Natal;400
+Fortaleza;Salvador;550
+Natal;Goiânia;800
+Aracaju;Manaus;350
+Vitória;Recife;600
+Belo Horizonte;Salvador;200
+Porto Alegre;Goiânia;500
+Salvador;Fortaleza;300
+Recife;Natal;150
+Manaus;Aracaju;900
+Goiânia;Vitória;700
+Fortaleza;Belo Horizonte;450
+Natal;Porto Alegre;250
+Aracaju;Salvador;1000
+Vitória;Recife;350

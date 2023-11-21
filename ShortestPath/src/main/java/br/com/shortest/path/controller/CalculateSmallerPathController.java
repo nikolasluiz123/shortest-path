@@ -57,9 +57,9 @@ public class CalculateSmallerPathController {
 																					this.comboboxVerticeFinal.getValue());
 			
 			GraphGeneratorConfigurator configurator = new GraphGeneratorConfigurator();
-			SwingNode swingNode = configurator.setDimension(600, 600)
-					.setEdgeStroke(2.0f)
-					.generateWithConfigs(graphShortestPath);
+			SwingNode swingNode = configurator.setDimension((int) containerGraphShortestPath.getWidth(), (int) containerGraphShortestPath.getHeight())
+											  .setEdgeStroke(2.0f)
+											  .generateWithConfigs(graphShortestPath);
 			
 			this.containerGraphShortestPath.getChildren().clear();
 			this.containerGraphShortestPath.getChildren().add(swingNode);

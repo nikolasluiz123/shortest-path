@@ -39,21 +39,25 @@ public class GraphDataTransform {
 
 		for (String line : lines) {
 			String[] split = line.split(";");
-
-			if (!viewGraph.getVertices().stream().anyMatch(v -> v.getValue().equals(split[0]))) {
-				viewGraph.addVertex(new Vertex(split[0]));
+			String city1 = split[0].substring(0, 1);
+			String city2 = split[1].substring(0, 1);
+			
+			if (!viewGraph.getVertices().stream().anyMatch(v -> v.getValue().equals(city1))) {
+				viewGraph.addVertex(new Vertex(city1));
 			}
 			
-			if (!viewGraph.getVertices().stream().anyMatch(v -> v.getValue().equals(split[1]))) {
-				viewGraph.addVertex(new Vertex(split[1]));
+			if (!viewGraph.getVertices().stream().anyMatch(v -> v.getValue().equals(city2))) {
+				viewGraph.addVertex(new Vertex(city2));
 			}
 		}
 		
 		for (String line : lines) {
 			String[] split = line.split(";");
+			String city1 = split[0].substring(0, 1);
+			String city2 = split[1].substring(0, 1);
 
-			Vertex vertex1 = viewGraph.getVertices().stream().filter(v -> v.getValue().equals(split[0])).findFirst().get();
-			Vertex vertex2 = viewGraph.getVertices().stream().filter(v -> v.getValue().equals(split[1])).findFirst().get();
+			Vertex vertex1 = viewGraph.getVertices().stream().filter(v -> v.getValue().equals(city1)).findFirst().get();
+			Vertex vertex2 = viewGraph.getVertices().stream().filter(v -> v.getValue().equals(city2)).findFirst().get();
 			Integer weight = Integer.parseInt(split[2]);
 
 			Edge edge = new Edge(vertex1, vertex2, weight);
