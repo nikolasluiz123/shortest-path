@@ -25,7 +25,7 @@ public class FileBufferedReader {
 	 *
 	 */
 	public List<String> readFile() throws Exception {
-		List<String> numbers = new ArrayList<>();
+		List<String> lines = new ArrayList<>();
 
 		FileReader fileReader = new FileReader(this.fileName);
 
@@ -33,12 +33,12 @@ public class FileBufferedReader {
 			String line;
 
 			while ((line = reader.readLine()) != null) {
-				numbers.add(line);
+				lines.add(line);
 			}
 		} finally {
 			fileReader.close();
 		}
 
-		return numbers;
+		return lines;
 	}
 }
