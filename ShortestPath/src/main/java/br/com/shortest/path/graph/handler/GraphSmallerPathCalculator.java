@@ -67,7 +67,7 @@ public class GraphSmallerPathCalculator {
 			}
 		}
 
-		return buildShortestPathGraph(start, end, previousVertices);
+		return buildSmallerPathGraph(start, end, previousVertices);
 	}
 
 	/**
@@ -99,7 +99,7 @@ public class GraphSmallerPathCalculator {
 	 * @author Nikolas Luiz Schmitt
 	 *
 	 */
-	private SparseMultigraph<Vertex, Edge> buildShortestPathGraph(Vertex start, 
+	private SparseMultigraph<Vertex, Edge> buildSmallerPathGraph(Vertex start, 
 															      Vertex end, 
 															      Map<Vertex, Vertex> previousVertices) {
 		SparseMultigraph<Vertex, Edge> shortestPathGraph = new SparseMultigraph<>();
