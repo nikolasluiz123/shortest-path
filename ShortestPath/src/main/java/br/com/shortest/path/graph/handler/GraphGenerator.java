@@ -1,7 +1,6 @@
 package br.com.shortest.path.graph.handler;
 
 import java.awt.BasicStroke;
-import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.geom.Point2D;
 import java.util.ArrayList;
@@ -13,7 +12,6 @@ import br.com.shortest.path.utils.NumberUtils;
 import edu.uci.ics.jung.algorithms.layout.StaticLayout;
 import edu.uci.ics.jung.graph.SparseMultigraph;
 import edu.uci.ics.jung.visualization.BasicVisualizationServer;
-import edu.uci.ics.jung.visualization.decorators.ToStringLabeller;
 import javafx.embed.swing.SwingNode;
 
 /**
@@ -54,10 +52,9 @@ public class GraphGenerator {
 		BasicVisualizationServer<Vertex, Edge> vv = new BasicVisualizationServer<>(layout);
 		vv.setPreferredSize(this.dimension);
 
-		vv.getRenderContext().setVertexFillPaintTransformer(i -> Color.GREEN);
 		vv.getRenderContext().setEdgeStrokeTransformer(i -> this.edgeStroke);
 
-		vv.getRenderContext().setVertexLabelTransformer(new ToStringLabeller());
+		vv.getRenderer().setVertexRenderer(new CustomVertexRenderer());
 		vv.getRenderContext().setEdgeLabelTransformer(edge -> String.valueOf(edge.getWeight()));
 
 		SwingNode swingNode = new SwingNode();
